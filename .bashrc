@@ -233,17 +233,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-######################
-# dgn's personal stuff
-######################
-
-# For snt_jammer
-if [ -f /tools/mentor/modelsim_de_10.6b/setup_env.sh ]; then
-  source /tools/mentor/modelsim_de_10.6b/setup_env.sh 
-fi
-if [ -f /tools/setup_license.sh ]; then
-  source /tools/setup_license.sh
-fi
+# SSH agent
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
@@ -265,5 +255,23 @@ if [ -f "${SSH_ENV}" ]; then
     }
 else
     start_agent;
+fi
+
+# Git branch in prompt
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+######################
+# dgn's personal stuff
+######################
+
+# For snt_jammer
+if [ -f /tools/mentor/modelsim_de_10.6b/setup_env.sh ]; then
+  source /tools/mentor/modelsim_de_10.6b/setup_env.sh 
+fi
+if [ -f /tools/setup_license.sh ]; then
+  source /tools/setup_license.sh
 fi
 
