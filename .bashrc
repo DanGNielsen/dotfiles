@@ -238,8 +238,8 @@ fi
 ######################
 
 # For snt_jammer
-if [ -f /tools/mentor/modelsim_de_10.6b/setup_env.sh ]; then
-  source /tools/mentor/modelsim_de_10.6b/setup_env.sh 
+if [ -f /tools/mentor/modelsim_de_10.6c/setup_env.sh ]; then
+  source /tools/mentor/modelsim_de_10.6c/setup_env.sh 
 fi
 if [ -f /tools/setup_license.sh ]; then
   source /tools/setup_license.sh
