@@ -275,3 +275,7 @@ if [ -f /tools/setup_license.sh ]; then
   source /tools/setup_license.sh
 fi
 
+if [ "$(hostname)" == "server12" ]; then
+  alias vpnstart='sudo /usr/local/bin/vpnc-wrapper start'
+fi
+
