@@ -277,5 +277,6 @@ fi
 
 if [ "$(hostname)" == "server12" ]; then
   alias vpnstart='sudo /usr/local/bin/vpnc-wrapper start'
+  source /tools/aldec/riviera/2017.02.env_var.sh
 fi
 
