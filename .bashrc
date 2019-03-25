@@ -279,3 +279,10 @@ if [ "$(hostname)" == "server12" ]; then
   alias vpnstart='sudo /usr/local/bin/vpnc-wrapper start'
 fi
 
+cdtb() {
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Sim_Tb\/FrameThrower_vs_A\/testbench/')
+}
+
+cdsrc() {
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Src/')
+}
