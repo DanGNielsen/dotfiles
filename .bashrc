@@ -280,3 +280,11 @@ if [ "$(hostname)" == "server12" ]; then
   source /tools/aldec/riviera/2017.02.env_var.sh
 fi
 
+cdtb() {
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Sim_Tb\/FrameThrower_vs_A\/testbench/')
+}
+
+cdsrc() {
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Src/')
+}
+
