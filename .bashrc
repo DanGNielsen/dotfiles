@@ -281,10 +281,11 @@ if [ "$(hostname)" == "server12" ]; then
 fi
 
 cdtb() {
-    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Sim_Tb\/FrameThrower_vs_A\/testbench/')
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\).*/\1\/Sim_Tb\/FrameThrower_vs_A\/testbench/')
 }
 
 cdsrc() {
-    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\/\).*/\1Src/')
+    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\).*/\1\/Src/')
 }
 
+source /usr/local/share/zeuxion/bash/ssh_agent
