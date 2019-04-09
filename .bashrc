@@ -274,6 +274,9 @@ fi
 if [ -f /tools/setup_license.sh ]; then
   source /tools/setup_license.sh
 fi
+if [ -f /tools/Xilinx/setup_env_2018.3.sh ]; then
+  source /tools/Xilinx/setup_env_2018.3.sh 
+fi
 
 if [ "$(hostname)" == "server12" ]; then
   alias vpnstart='sudo /usr/local/bin/vpnc-wrapper start'
