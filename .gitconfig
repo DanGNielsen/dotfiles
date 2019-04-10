@@ -12,3 +12,5 @@
 
 [core]
 	excludesfile = /home/dgn/.gitignore_global
+[status]
+	showUntrackedFiles = no
