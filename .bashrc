@@ -284,11 +284,21 @@ if [ "$(hostname)" == "server12" ]; then
 fi
 
 cdtb() {
-    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\).*/\1\/Sim_Tb\/FrameThrower_vs_A\/testbench/')
+    if [ $(pwd | grep IO_Blade_Kaluga) ]; then
+        cd $(pwd | sed -e 's/\(.*\/IO_Blade_Kaluga\).*/\1\/Appl_FPGA\/Analyzers\/SAS_24G_Analyzer_Chessa\/Sim_Tb\/Modules\/Core/')
+    fi
+    if [ $(pwd | grep main_board_tarpon) ]; then
+        cd $(pwd | sed -e 's/\(.*\/main_board_tarpon\).*/\1\/Application_FPGA\/Sim_Tb\/FrameThrower_vs_A\/testbench/')
+    fi
 }
 
 cdsrc() {
-    cd $(pwd | sed -e 's/\(.*\/Application_FPGA\).*/\1\/Src/')
+    if [ $(pwd | grep IO_Blade_Kaluga) ]; then
+        cd $(pwd | sed -e 's/\(.*\/IO_Blade_Kaluga\).*/\1\/Appl_FPGA\/Analyzers\/SAS_24G_Analyzer_Chessa\/Src/')
+    fi
+    if [ $(pwd | grep main_board_tarpon) ]; then
+        cd $(pwd | sed -e 's/\(.*\/main_board_tarpon\).*/\1\/Application_FPGA\/Src/')
+    fi
 }
 
 source /usr/local/share/zeuxion/bash/ssh_agent
