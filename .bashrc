@@ -301,4 +301,13 @@ cdsrc() {
     fi
 }
 
+cdincl() {
+    if [ $(pwd | grep IO_Blade_Kaluga) ]; then
+        cd $(pwd | sed -e 's/\(.*\/IO_Blade_Kaluga\).*/\1\/Appl_FPGA\/Analyzers\/SAS_24G_Analyzer_Chessa\/Incl/')
+    fi
+    if [ $(pwd | grep main_board_tarpon) ]; then
+        cd $(pwd | sed -e 's/\(.*\/main_board_tarpon\).*/\1\/Application_FPGA\/Incl/')
+    fi
+}
+
 source /usr/local/share/zeuxion/bash/ssh_agent
