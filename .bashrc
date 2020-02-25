@@ -267,7 +267,13 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 # dgn's personal stuff
 ######################
 
+# Useful command for simulations license usage:
+#lmstat -f msimpevsimvlog
+
 # For snt_jammer
+#if [ -f /tools/mentor/modelsim_de_10.5c/setup_env.sh ]; then
+#  source /tools/mentor/modelsim_de_10.5c/setup_env.sh 
+#fi
 if [ -f /tools/mentor/modelsim_de_10.6c/setup_env.sh ]; then
   source /tools/mentor/modelsim_de_10.6c/setup_env.sh 
 fi
@@ -282,6 +288,14 @@ if [ "$(hostname)" == "server12" ]; then
   alias vpnstart='sudo /usr/local/bin/vpnc-wrapper start'
   source /tools/aldec/riviera/2017.02.env_var.sh
 fi
+
+# For wahoo
+#if [ -f /tools/altera/setup_env_13.0sp1.sh ]; then
+#  source /tools/altera/setup_env_13.0sp1.sh
+#fi
+# Alternative - avoids updating $PATH to point to Quartus' tclsh first
+export QUARTUS_ROOTDIR="/tools/altera/13.0sp1/quartus"
+
 
 cdtb() {
     if [ $(pwd | grep IO_Blade_Kaluga) ]; then
